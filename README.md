@@ -1,15 +1,14 @@
-# Ministry of Justice Template Repository
+# Cloud Platform Shell
 
-Use this template to [create a repository] with the default initial files for a Ministry of Justice Github repository, including:
+This repository maintains a `cloud-platform-shell` docker image.
 
-* The correct LICENSE
-* Github actions
-* .gitignore file
+This is a minimal docker image based on
+[busybox](https://hub.docker.com/_/busybox), but with a non-root user defined.
+This allows the image to be launched on the [Cloud Platform] like this:
 
-Once you have created your repository, please:
+```
+kubectl -n <namespace> run shell --rm -i --tty --image ministryofjustice/cloud-platform-shell -- sh
+```
 
-* Edit the copy of this README.md file to document your project
-* Grant permissions to the appropriate MoJ teams
-* Setup branch protection
+[Cloud Platform]: https://user-guide.cloud-platform.service.justice.gov.uk/documentation/concepts/about-the-cloud-platform.html#about-the-cloud-platform
 
-[create a repository]: https://github.com/ministryofjustice/template-repository/generate
